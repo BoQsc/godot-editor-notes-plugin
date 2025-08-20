@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.godotengine.org)",
+      "Bash(grep:*)",
+      "Bash(cp:*)",
+      "Bash(sed:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(godot:*)",
+      "Bash(python:*)",
+      "Bash(find:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
