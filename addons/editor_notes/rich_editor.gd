@@ -1262,9 +1262,23 @@ func handle_key_input(event: InputEventKey):
 					redo()  # Ctrl+Shift+Z for redo
 				else:
 					undo()  # Ctrl+Z for undo
+			else:
+				# Let it fall through to unicode handling
+				if event.unicode > 31 and event.unicode < 127:
+					if has_selection():
+						delete_selection()
+					var char_str = char(event.unicode)
+					insert_character(char_str)
 		KEY_Y:
 			if ctrl_pressed:
 				redo()  # Ctrl+Y for redo (alternative)
+			else:
+				# Let it fall through to unicode handling
+				if event.unicode > 31 and event.unicode < 127:
+					if has_selection():
+						delete_selection()
+					var char_str = char(event.unicode)
+					insert_character(char_str)
 		KEY_X:
 			if ctrl_pressed and shift_pressed:
 				# Ctrl+Shift+X for strikethrough
